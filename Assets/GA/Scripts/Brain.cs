@@ -45,7 +45,7 @@ public class Brain : MonoBehaviour
     {
         this.transform.Rotate(0, dna.genes[seeWall], 0);
         if(canMove)
-        this.transform.Translate(0, 0, 0.1f);
+        this.transform.Translate(0, 0, 0.2f);
     }
 }
 
