@@ -13,6 +13,7 @@ public class PopulationManager : MonoBehaviour {
 	public float timeScale = 2;
 	int generation = 1;
 	public GenerateMaze maze;
+	GameObject fittestBunny = null;
 
 	GUIStyle guiStyle = new GUIStyle();
 	void OnGUI()
@@ -63,9 +64,14 @@ public class PopulationManager : MonoBehaviour {
 	{
 		List<GameObject> sortedList = population.OrderByDescending(o => o.GetComponent<Brain>().eggsFound).ToList();
 		string eggsCollected = "Generation :" + generation;
-		foreach(GameObject g in sortedList)
+		Debug.Log("fittest bunny's genes count: " + sortedList[0].GetComponent<Brain>().dna.genes.Count);
+        Debug.Log("fittest bunny's genes false value: " + sortedList[0].GetComponent<Brain>().dna.genes[false] + " true value: " + sortedList[0].GetComponent<Brain>().dna.genes[true]);
+		
+
+        foreach (GameObject g in sortedList)
 		{
 			eggsCollected += " , " + g.GetComponent<Brain>().eggsFound;
+			
 		}
 		Debug.Log("Eggs: " + eggsCollected);
 		population.Clear();

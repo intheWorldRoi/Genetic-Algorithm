@@ -844,8 +844,8 @@ MonoBehaviour:
   - {fileID: 1814038232}
   - {fileID: 536686468}
   populationSize: 50
-  trialTime: 10
-  timeScale: 1
+  trialTime: 60
+  timeScale: 10
   maze: {fileID: 1496461775}
 --- !u!4 &1924172272
 Transform:
